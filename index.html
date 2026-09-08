@@ -8,9 +8,19 @@
 <meta property="og:title" content="5yong">
 <meta property="og:description" content="vvenv 的项目。">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="5yong">
+<meta property="og:image" content="https://5yong.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="5yong">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfaf8">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14130f">
 <meta property="og:url" content="https://5yong.com/">
 <link rel="canonical" href="https://5yong.com/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><style>rect{fill:%23a8442b}path{stroke:%23fbfaf8}@media(prefers-color-scheme:dark){rect{fill:%23e2906f}path{stroke:%2314130f}}</style><rect width='32' height='32' rx='7.5'/><g fill='none' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M21 9.2 H10.8 V15.6'/><path d='M10.8 15.6 H16 A5.6 5.6 0 1 1 10.6 23.9'/></g></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><style>rect{fill:%23a8442b}path{stroke:%23fbfaf8}@media(prefers-color-scheme:dark){rect{fill:%23e2906f}path{stroke:%2314130f}}</style><rect width='32' height='32' rx='7.5'/><g fill='none' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M21 9.2 H10.8 V15.6'/><path d='M10.8 15.6 H16 A5.6 5.6 0 1 1 10.6 23.9'/></g></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
 :root {
   --bg: #fbfaf8;
@@ -64,11 +74,21 @@ header { padding: 6rem 0 4rem; }
 
 h1 {
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--ink);
+}
+
+.mark {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: block;
 }
 
 .project {
@@ -150,16 +170,18 @@ a:hover { border-bottom-color: currentColor; }
 
 @media (max-width: 34rem) {
   header { padding: 3.75rem 0 2.5rem; }
-  h1 { font-size: 1.5rem; }
+  h1 { font-size: 1.5rem; gap: 0.55rem; }
+  .mark { width: 2rem; height: 2rem; }
   .project { margin-top: 2.25rem; padding-top: 2.25rem; }
 }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"5yong","url":"https://5yong.com/","author":{"@type":"Person","alternateName":"vvenv","url":"https://github.com/vvenv"}}</script>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <h1>5yong</h1>
+  <h1><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7.5" fill="var(--accent)"/><g fill="none" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 9.2 H10.8 V15.6"/><path d="M10.8 15.6 H16 A5.6 5.6 0 1 1 10.6 23.9"/></g></svg>5yong</h1>
 </header>
 
 <main>

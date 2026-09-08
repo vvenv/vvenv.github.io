@@ -17,10 +17,16 @@ GitHub Pages，源为 `master` 分支根目录，自定义域 [5yong.com](https:
 ## 目录
 
 ```
-index.html      # 站点全部内容
-CNAME           # 自定义域
-.nojekyll       # 跳过 Jekyll 处理
+index.html              # 站点全部内容（含样式、插图、logo）
+og.png                  # 分享卡片图 1200×630
+apple-touch-icon.png    # iOS 主屏图标 180×180
+icon-32.png             # PNG favicon 回退（现代浏览器走内联 SVG）
+CNAME                   # 自定义域
+.nojekyll               # 跳过 Jekyll 处理
 ```
 
-就这些——没有构建脚本、没有依赖、没有 workflow 文件。
+没有构建脚本、没有依赖、没有 workflow 文件。
 发布走 GitHub 内置的 `pages-build-deployment`，不需要在仓库里维护。
+
+三张 PNG 由 headless Chrome 渲染 HTML 模板得到，模板未入库——
+改动时按 `index.html` 里的 logo 路径重画即可。
