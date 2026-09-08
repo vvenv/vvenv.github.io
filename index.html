@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vvenv</title>
+<meta name="description" content="做给家里人用的东西，顺手开源。听写、跑酷、奥数讲解，还有一个给编码 Agent 用的 SaaS 底座。">
+<meta property="og:title" content="vvenv">
+<meta property="og:description" content="做给家里人用的东西，顺手开源。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://5yong.com/">
+<link rel="canonical" href="https://5yong.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🐰</text></svg>">
+<style>
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --ink: #1c1b19;
+  --ink-soft: #56534e;
+  --ink-faint: #8b877f;
+  --line: #e6e2da;
+  --accent: #b4472c;
+  --accent-soft: #f3ece6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14130f;
+    --surface: #1b1a16;
+    --ink: #ecebe6;
+    --ink-soft: #a8a49b;
+    --ink-faint: #78746c;
+    --line: #2c2a24;
+    --accent: #e08d6e;
+    --accent-soft: #262019;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- header ---------- */
+
+header {
+  padding: 5.5rem 0 3.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0.85rem 0 0;
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  max-width: 32rem;
+}
+
+.meta {
+  margin: 1.75rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--ink-faint);
+}
+
+.meta a { color: var(--ink-soft); }
+
+.meta span[aria-hidden] { margin: 0 0.55rem; opacity: 0.5; }
+
+/* ---------- sections ---------- */
+
+section { padding-bottom: 3.5rem; }
+
+h2 {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section-note {
+  margin: 0 0 1.75rem;
+  font-size: 0.9375rem;
+  color: var(--ink-faint);
+}
+
+/* ---------- project cards ---------- */
+
+.project {
+  border-top: 1px solid var(--line);
+  padding: 1.75rem 0;
+}
+
+.project:last-child { padding-bottom: 0; }
+
+.project h3 {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.project h3 .what {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--ink-faint);
+}
+
+.why {
+  margin: 0.75rem 0 0;
+  color: var(--ink-soft);
+}
+
+.why b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tags {
+  margin: 0.9rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tags span {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--accent-soft);
+  color: var(--ink-soft);
+}
+
+.links {
+  margin: 0.9rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.9375rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  padding: 0.05em 0.3em;
+  border-radius: 0.2rem;
+  background: var(--accent-soft);
+  white-space: nowrap;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+a:hover { border-bottom-color: currentColor; }
+
+/* ---------- compact list ---------- */
+
+.compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.compact li {
+  border-top: 1px solid var(--line);
+  padding: 0.85rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+}
+
+.compact .name { font-weight: 600; }
+
+.compact .desc {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  flex: 1 1 14rem;
+}
+
+.stars {
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0 4rem;
+  font-size: 0.9375rem;
+  color: var(--ink-faint);
+}
+
+footer a { color: var(--ink-soft); }
+
+footer p { margin: 0 0 0.4rem; }
+
+@media (max-width: 34rem) {
+  header { padding: 3.5rem 0 2.5rem; }
+  h1 { font-size: 1.75rem; }
+  .tagline { font-size: 1.0625rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>vvenv</h1>
+  <p class="tagline">做给家里人用的东西，顺手开源。剩下的时间用来折腾一些没什么用但很想做的东西。</p>
+  <p class="meta">
+    <a href="https://github.com/vvenv">GitHub</a>
+    <span aria-hidden="true">·</span>
+    <a href="mailto:vvenvw@gmail.com">vvenvw@gmail.com</a>
+  </p>
+</header>
+
+<main>
+
+<section>
+  <h2>在跑的产品</h2>
+  <p class="section-note">起因都很具体：家里有个问题没人解决，就自己写一个。</p>
+
+  <article class="project">
+    <h3>Alice 听写 <span class="what">英文单词听写 App</span></h3>
+    <p class="why">孩子每天要听写单词，得有人一个一个念，念错了从头再来。于是做了这个：<b>拍张照就能识出词表</b>，自动朗读、可调语速与间隔、标错词自动进错词本。手机放桌上写字时屏幕常亮，切后台、来电、拔耳机都会自动暂停——不会白读几个词。内置中考 1600、高考 3500 和人教/外研/闽教版单元词表。</p>
+    <p class="tags"><span>Flutter</span><span>Android / iOS / Web</span><span>GLM-4V OCR</span><span>多级 TTS 兜底</span></p>
+    <p class="links">
+      <a href="https://alice.edao.plus">官网与下载</a>
+      <a href="https://github.com/vvenv/alice">源码</a>
+    </p>
+  </article>
+
+  <article class="project">
+    <h3>汤姆猫跑酷 <span class="what">原生 Android 3D 像素跑酷</span></h3>
+    <p class="why">给儿子做的。市面上的跑酷不是塞广告就是逼内购，所以这个<b>免费、无广告、无内购</b>，进度只存在手机里。三条跑道，穿过传送门会掉进另一个宇宙——水下更漂、天空跳更高、星空几乎没重力。路上会稀有地刷出 88 件中国文物，甲骨文、越王勾践剑、曾侯乙编钟……<b>知识只在孩子自己捡到之后才出现</b>，不弹题、不考问。画面做过护眼调色。</p>
+    <p class="tags"><span>Kotlin</span><span>OpenGL ES 2.0</span><span>Android 7.0+</span></p>
+    <p class="links">
+      <a href="https://run.edao.plus">官网与下载</a>
+      <a href="https://github.com/vvenv/tomrun">源码</a>
+    </p>
+  </article>
+
+  <article class="project">
+    <h3>一道+ <span class="what">小学奥数讲解工具</span></h3>
+    <p class="why">吃透一道题，胜过刷十道。奥数题库到处都是，问题从来不是题不够，而是<b>「有答案，但看不懂推导过程」</b>——孩子看不懂，陪读的家长自己也不一定讲得清。所以这个不堆题库，只做讲解：分步图文、多解法对照、结构化可视化，配一本能互相跳转的方法手册。</p>
+    <p class="tags"><span>React Router</span><span>Vite</span><span>预渲染</span></p>
+    <p class="links">
+      <a href="https://edao.plus">edao.plus</a>
+      <a href="https://github.com/vvenv/onemath">源码</a>
+    </p>
+  </article>
+</section>
+
+<section>
+  <h2>开源底座</h2>
+
+  <article class="project">
+    <h3>Rewindom <span class="what">给编码 Agent 用的多租户 SaaS 底座</span></h3>
+    <p class="why">每做一个 SaaS，认证、租户、配额、权限、计费、官网 CMS 这一层都要重写一遍。<b>写一次，后面的业务当模块挂上去，按租户开关</b>——没开通就不挂路由、不进侧栏、不产生数据。它同时是 Agent-first 的：人和 Cursor / Claude 走同一条 <code>Spec → gen → check</code> 闭环，Spec 留空 Agent 必须追问、禁止瞎猜，机器闸门拦住越权和漏装配。不是脚手架喷发器，也不是低代码——模块就是 TypeScript 包，契约和测试都是代码。</p>
+    <p class="tags"><span>TypeScript</span><span>模块化单体</span><span>单进程 Docker Compose</span><span>开源</span></p>
+    <p class="links">
+      <a href="https://rewindom.com">rewindom.com</a>
+      <a href="https://rewindom.com/docs">文档</a>
+      <a href="https://github.com/vvenv/rewindom">源码</a>
+    </p>
+  </article>
+</section>
+
+<section>
+  <h2>折腾</h2>
+  <p class="section-note">没什么用，但做得很开心的东西。</p>
+
+  <article class="project">
+    <h3>Vanilla WoW 私服 <span class="what">macOS Apple Silicon 上的 1.12.1</span></h3>
+    <p class="why">原版 Blizzard 客户端跑在 WoWSilicon 的 Wine 上，服务端用 VMaNGOS，外加一个 SwiftUI 启动器。中途试过原生 Vulkan 的重实现客户端，最后<b>放弃了——原版二进制才是行为的参考实现</b>，那些编译进 native 代码、Lua 层修不了的毛病在它身上根本不存在。整个过程的踩坑记录都写在 README 里，包括后来把服务端整个搬上 VPS 那一趟。</p>
+    <p class="tags"><span>VMaNGOS</span><span>Wine</span><span>SwiftUI</span><span>Docker</span></p>
+    <p class="links"><a href="https://github.com/vvenv/wow">源码与踩坑记录</a></p>
+  </article>
+
+  <article class="project">
+    <h3>功夫 <span class="what">像素风武侠养成游戏</span></h3>
+    <p class="why">验证「练功 → 学招式 → 实战 → 成长」这个核心循环：打坐积累修为，够了自动突破境界；罗汉拳、亢龙掌法、流云剑法、绵掌各有内力消耗与熟练度，从生疏练到出神入化。<b>所有像素纹理由字符矩阵程序生成</b>，零外部美术资源；逻辑层不依赖 Phaser，可以单测；加一门武学就是加一条配置。</p>
+    <p class="tags"><span>TypeScript</span><span>Phaser 3</span><span>Vitest</span></p>
+    <p class="links"><a href="https://github.com/vvenv/kungfu">源码</a></p>
+  </article>
+
+  <article class="project">
+    <h3>给女儿的编程游戏</h3>
+    <p class="why">名字就是全部说明。</p>
+    <p class="links"><a href="https://github.com/vvenv/the-programming-games-for-my-daughter">源码</a></p>
+  </article>
+</section>
+
+<section>
+  <h2>早些年的开源</h2>
+  <p class="section-note">前端工具链那几年留下的，有些到今天还有人在用。</p>
+  <ul class="compact">
+    <li>
+      <a class="name" href="https://github.com/vvenv/vuex-localstorage">vuex-localstorage</a>
+      <span class="desc">Vuex 状态持久化，带过期时间，也可换别的 storage</span>
+      <span class="stars">★ 125</span>
+    </li>
+    <li>
+      <a class="name" href="https://github.com/vvenv/postcss-flexible">postcss-flexible</a>
+      <span class="desc">移动端 flexible 方案的 PostCSS 实现，dpr / rem / url 转换</span>
+      <span class="stars">★ 20</span>
+    </li>
+    <li>
+      <a class="name" href="https://github.com/vvenv/cofe">cofe</a>
+      <span class="desc">可视化搭建（No-Code）系统</span>
+      <span class="stars">★ 17</span>
+    </li>
+    <li>
+      <a class="name" href="https://github.com/vvenv/nuo">nuo</a>
+      <span class="desc">轻量 Promise polyfill，A+ 合规，带 notify / progress / finally</span>
+      <span class="stars">★ 7</span>
+    </li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>更多在 <a href="https://github.com/vvenv?tab=repositories">github.com/vvenv</a>。</p>
+  <p>写信：<a href="mailto:vvenvw@gmail.com">vvenvw@gmail.com</a></p>
+</footer>
+
+</div>
+</body>
+</html>
