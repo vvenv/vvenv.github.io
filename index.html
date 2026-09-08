@@ -57,7 +57,7 @@ body {
 .wrap {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 6rem;
 }
 
 header { padding: 6rem 0 4rem; }
@@ -70,17 +70,6 @@ h1 {
   letter-spacing: -0.01em;
   color: var(--ink);
 }
-
-.contact {
-  margin: 0.85rem 0 0;
-  font-size: 0.875rem;
-  color: var(--ink-faint);
-}
-
-.contact a { color: var(--ink-faint); }
-.contact a:hover { color: var(--accent); }
-.contact i,
-footer i { font-style: normal; padding: 0 0.5rem; opacity: 0.45; }
 
 .project {
   margin-top: 3rem;
@@ -159,18 +148,6 @@ a {
 
 a:hover { border-bottom-color: currentColor; }
 
-footer {
-  margin-top: 3rem;
-  padding: 2.25rem 0 5rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.875rem;
-  color: var(--ink-faint);
-}
-
-footer p { margin: 0; }
-footer a { color: var(--ink-faint); }
-footer a:hover { color: var(--accent); }
-
 @media (max-width: 34rem) {
   header { padding: 3.75rem 0 2.5rem; }
   h1 { font-size: 1.5rem; }
@@ -183,9 +160,6 @@ footer a:hover { color: var(--accent); }
 
 <header>
   <h1>5yong</h1>
-  <p class="contact">
-    <a href="https://github.com/vvenv">github.com/vvenv</a><i>·</i><a href="mailto:vvenvw@gmail.com">vvenvw@gmail.com</a>
-  </p>
 </header>
 
 <main>
@@ -382,10 +356,6 @@ footer a:hover { color: var(--accent); }
   </article>
 
 </main>
-
-<footer>
-  <p><a href="https://github.com/vvenv?tab=repositories">github.com/vvenv</a><i>·</i><a href="mailto:vvenvw@gmail.com">vvenvw@gmail.com</a></p>
-</footer>
 
 </div>
 </body>
