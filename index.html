@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>5yong</title>
-<meta name="description" content="无用。家里人天天在用。听写、跑酷、奥数讲解，还有一个给编码 Agent 用的 SaaS 底座。">
+<meta name="description" content="vvenv 的项目：Alice 听写、汤姆猫跑酷、一道+、Rewindom、Vanilla WoW 私服。">
 <meta property="og:title" content="5yong">
-<meta property="og:description" content="无用。家里人天天在用。">
+<meta property="og:description" content="vvenv 的项目。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://5yong.com/">
 <link rel="canonical" href="https://5yong.com/">
@@ -14,12 +14,10 @@
 <style>
 :root {
   --bg: #fbfaf8;
-  --surface: #ffffff;
   --ink: #1a1917;
   --ink-soft: #55524c;
   --ink-faint: #78736a;
   --line: #e7e3db;
-  --line-strong: #d5cfc4;
   --accent: #a8442b;
   --art-bg: #f3efe6;
   --art-line: #d3ccbc;
@@ -29,12 +27,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #14130f;
-    --surface: #1b1a16;
     --ink: #eeece7;
     --ink-soft: #a6a299;
     --ink-faint: #837e75;
     --line: #29271f;
-    --line-strong: #3a372e;
     --accent: #e2906f;
     --art-bg: #1e1c16;
     --art-line: #353127;
@@ -64,9 +60,7 @@ body {
   padding: 0 1.5rem;
 }
 
-/* ── 一级：名字 ─────────────────────────── */
-
-header { padding: 6rem 0 4.5rem; }
+header { padding: 6rem 0 4rem; }
 
 h1 {
   margin: 0;
@@ -77,54 +71,27 @@ h1 {
   color: var(--ink);
 }
 
-.tagline {
-  margin: 1rem 0 0;
-  max-width: 30rem;
-}
-
 .contact {
-  margin: 2rem 0 0;
+  margin: 0.85rem 0 0;
   font-size: 0.875rem;
   color: var(--ink-faint);
 }
 
 .contact a { color: var(--ink-faint); }
 .contact a:hover { color: var(--accent); }
-.contact i { font-style: normal; padding: 0 0.5rem; opacity: 0.45; }
-
-/* ── 二级：分组标签 ─────────────────────── */
-
-section { margin-bottom: 4rem; }
-
-h2 {
-  margin: 0;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0.16em;
-  color: var(--ink-faint);
-}
-
-.section-note {
-  margin: 0.25rem 0 0;
-  font-size: 0.875rem;
-  color: var(--ink-faint);
-}
-
-section > :last-child { margin-bottom: 0; }
-
-/* ── 三级：项目 ─────────────────────────── */
+.contact i,
+footer i { font-style: normal; padding: 0 0.5rem; opacity: 0.45; }
 
 .project {
-  margin-top: 2.25rem;
-  padding-top: 2.25rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
   border-top: 1px solid var(--line);
 }
 
-section > h2 + .project,
-section > .section-note + .project {
-  margin-top: 1.75rem;
-  padding-top: 1.75rem;
+.project:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .banner {
@@ -141,7 +108,7 @@ section > .section-note + .project {
   height: auto;
 }
 
-h3 {
+h2 {
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
@@ -156,21 +123,14 @@ h3 {
   color: var(--ink-faint);
 }
 
-.why { margin: 0.9rem 0 0; }
+.desc { margin: 0.9rem 0 0; }
 
-.why strong {
-  font-weight: inherit;
-  color: var(--ink);
-}
-
-.why code {
+.desc code {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.875em;
   color: var(--ink);
   white-space: nowrap;
 }
-
-/* ── 四级：链接与标签 ───────────────────── */
 
 .links {
   margin: 1rem 0 0;
@@ -199,9 +159,8 @@ a {
 
 a:hover { border-bottom-color: currentColor; }
 
-/* ── 页脚 ───────────────────────────────── */
-
 footer {
+  margin-top: 3rem;
   padding: 2.25rem 0 5rem;
   border-top: 1px solid var(--line);
   font-size: 0.875rem;
@@ -213,9 +172,9 @@ footer a { color: var(--ink-faint); }
 footer a:hover { color: var(--accent); }
 
 @media (max-width: 34rem) {
-  header { padding: 3.75rem 0 3rem; }
+  header { padding: 3.75rem 0 2.5rem; }
   h1 { font-size: 1.5rem; }
-  section { margin-bottom: 3rem; }
+  .project { margin-top: 2.25rem; padding-top: 2.25rem; }
 }
 </style>
 </head>
@@ -224,17 +183,12 @@ footer a:hover { color: var(--accent); }
 
 <header>
   <h1>5yong</h1>
-  <p class="tagline">无用。家里人天天在用。</p>
   <p class="contact">
     <a href="https://github.com/vvenv">github.com/vvenv</a><i>·</i><a href="mailto:vvenvw@gmail.com">vvenvw@gmail.com</a>
   </p>
 </header>
 
 <main>
-
-<section>
-  <h2>在跑的产品</h2>
-  <p class="section-note">起因都很具体：家里有个问题没人解决，就自己写一个。</p>
 
   <article class="project">
     <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="音波落在稿纸的横线上，右侧一只怀表">
@@ -278,9 +232,9 @@ footer a:hover { color: var(--accent); }
       </g>
       <circle cx="1024" cy="204" r="6" fill="var(--art-ink)"/>
     </svg></div>
-    <h3>Alice 听写</h3>
+    <h2>Alice 听写</h2>
     <p class="what">英文单词听写 App</p>
-    <p class="why">孩子每天要听写单词，得有人一个一个念，念错了从头再来。于是做了这个：<strong>拍张照就能识出词表</strong>，自动朗读、可调语速与间隔、标错的词自动进错词本。手机放桌上写字时屏幕常亮，切后台、来电、拔耳机都会自动暂停，不会白读几个词。内置中考 1600、高考 3500 和人教、外研、闽教版的单元词表。</p>
+    <p class="desc">拍照或粘贴生成词表，自动朗读，可调语速与间隔，随时重听当前词。标错的词进错词本，可查看、导出、直接开听。内置中考 1600、高考 3500 和人教、外研、闽教版单元词表。听写时屏幕常亮；切后台、来电、拔耳机会自动暂停。发音源可选 Edge 朗读、有道发音或自定义 TTS，逐级兜底。</p>
     <p class="links">
       <a href="https://alice.edao.plus">官网与下载</a>
       <a href="https://github.com/vvenv/alice">源码</a>
@@ -321,9 +275,9 @@ footer a:hover { color: var(--accent); }
         <rect x="606" y="334" width="14" height="14"/>
       </g>
     </svg></div>
-    <h3>汤姆猫跑酷</h3>
+    <h2>汤姆猫跑酷</h2>
     <p class="what">原生 Android 3D 像素跑酷</p>
-    <p class="why">给儿子做的。市面上的跑酷不是塞广告就是逼内购，所以这个<strong>免费、无广告、无内购</strong>，进度只存在手机里。三条跑道，穿过传送门会掉进另一个宇宙，水下更漂、天空跳更高、星空几乎没重力。路上会稀有地刷出 88 件中国文物，甲骨文、越王勾践剑、曾侯乙编钟——知识只在孩子自己捡到之后才出现，不弹题、不考问。画面做过护眼调色。</p>
+    <p class="desc">三条跑道，左右换道、跳跃、铲滑。穿过传送门进入六个世界，配色、景物与重力各不相同。路上会刷出 88 件中国文物，每件带朝代与一句说明，捡到后可在藏品里翻看。金币可在小屋里装扮。免费，无广告，无内购，进度存在本地。</p>
     <p class="links">
       <a href="https://run.edao.plus">官网与下载</a>
       <a href="https://github.com/vvenv/tomrun">源码</a>
@@ -355,19 +309,15 @@ footer a:hover { color: var(--accent); }
       <use href="#xt" transform="translate(915 118) scale(0.55)" opacity=".3"/>
       <use href="#xt" transform="translate(450 50)"/>
     </svg></div>
-    <h3>一道+</h3>
+    <h2>一道+</h2>
     <p class="what">小学奥数讲解工具</p>
-    <p class="why">吃透一道题，胜过刷十道。奥数题库到处都是，问题从来不是题不够，而是<strong>有答案，但看不懂推导过程</strong>——孩子看不懂，陪读的家长自己也不一定讲得清。所以这个不堆题库，只做讲解：分步图文、多解法对照、结构化可视化，配一本能互相跳转的方法手册。</p>
+    <p class="desc">面向 3–6 年级。每道题给分步图文讲解、多解法对照与结构化可视化场景，并与方法手册互链。不做题库堆砌。</p>
     <p class="links">
       <a href="https://edao.plus">edao.plus</a>
       <a href="https://github.com/vvenv/onemath">源码</a>
     </p>
     <p class="stack">React Router<i>·</i>Vite<i>·</i>预渲染</p>
   </article>
-</section>
-
-<section>
-  <h2>开源</h2>
 
   <article class="project">
     <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="模块挂在一条底座导轨上，实心的是已开通，虚线的是未开通">
@@ -397,20 +347,16 @@ footer a:hover { color: var(--accent); }
         <rect x="805" y="254" width="150" height="76" rx="7"/>
       </g>
     </svg></div>
-    <h3>Rewindom</h3>
+    <h2>Rewindom</h2>
     <p class="what">给编码 Agent 用的多租户 SaaS 底座</p>
-    <p class="why">每做一个 SaaS，认证、租户、配额、权限、计费、官网 CMS 这一层都要重写一遍。<strong>写一次，后面的业务当模块挂上去，按租户开关</strong>——没开通就不挂路由、不进侧栏、不产生数据。它同时是 Agent-first 的：人和 Cursor、Claude 走同一条 <code>Spec → gen → check</code> 闭环，Spec 留空 Agent 必须追问、禁止瞎猜，机器闸门拦住越权和漏装配。不是脚手架喷发器，也不是低代码——模块就是 TypeScript 包，契约和测试都是代码。</p>
+    <p class="desc">内核不含业务代码，业务以 TypeScript 模块挂载，按租户开关——未开通不挂路由、不进侧栏、不产生数据。内置认证与 JWT、多租户与套餐配额、PBAC、审计、通知、任务中心、官网 CMS 与 SSR、错误日志与慢查询、平台计费与站点收款。人与 Agent 走同一条 <code>Spec → gen → check</code> 闭环，机器闸门校验契约、依赖与装配。单进程 Docker Compose 部署。</p>
     <p class="links">
       <a href="https://rewindom.com">rewindom.com</a>
       <a href="https://rewindom.com/docs">文档</a>
       <a href="https://github.com/vvenv/rewindom">源码</a>
     </p>
-    <p class="stack">TypeScript<i>·</i>模块化单体<i>·</i>单进程 Docker Compose</p>
+    <p class="stack">TypeScript<i>·</i>模块化单体<i>·</i>开源</p>
   </article>
-</section>
-
-<section>
-  <h2>折腾</h2>
 
   <article class="project">
     <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="月下的层叠山脊剪影">
@@ -426,18 +372,19 @@ footer a:hover { color: var(--accent); }
       <polygon points="0,342 182,268 332,320 480,250 640,312 820,244 980,308 1132,262 1200,300 1200,400 0,400" fill="var(--art-ink)" opacity=".38"/>
       <polygon points="0,380 160,330 322,370 470,322 640,368 800,320 962,364 1120,326 1200,354 1200,400 0,400" fill="var(--art-ink)" opacity=".62"/>
     </svg></div>
-    <h3>Vanilla WoW 私服</h3>
+    <h2>Vanilla WoW 私服</h2>
     <p class="what">macOS Apple Silicon 上的 1.12.1</p>
-    <p class="why">原版 Blizzard 客户端跑在 WoWSilicon 的 Wine 上，服务端用 VMaNGOS，外加一个 SwiftUI 启动器。中途试过原生 Vulkan 的重实现客户端，最后放弃了——<strong>原版二进制才是行为的参考实现</strong>，那些编译进 native 代码、Lua 层修不了的毛病在它身上根本不存在。整个过程的踩坑记录都写在 README 里，包括后来把服务端整个搬上 VPS 那一趟。</p>
-    <p class="links"><a href="https://github.com/vvenv/wow">源码与踩坑记录</a></p>
+    <p class="desc">原版 Blizzard 客户端跑在 WoWSilicon 的 Wine 上，服务端是 Docker 里的 VMaNGOS，另配一个 SwiftUI 启动器。README 记录了完整搭建过程与踩坑，包括后来把服务端整个迁到 VPS。</p>
+    <p class="links">
+      <a href="https://github.com/vvenv/wow">源码与踩坑记录</a>
+    </p>
     <p class="stack">VMaNGOS<i>·</i>Wine<i>·</i>SwiftUI<i>·</i>Docker</p>
   </article>
-</section>
 
 </main>
 
 <footer>
-  <p>更多在 <a href="https://github.com/vvenv?tab=repositories">github.com/vvenv</a>，写信到 <a href="mailto:vvenvw@gmail.com">vvenvw@gmail.com</a>。</p>
+  <p><a href="https://github.com/vvenv?tab=repositories">github.com/vvenv</a><i>·</i><a href="mailto:vvenvw@gmail.com">vvenvw@gmail.com</a></p>
 </footer>
 
 </div>
