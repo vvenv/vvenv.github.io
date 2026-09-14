@@ -1,357 +1,662 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>5yong</title>
-<meta name="description" content="vvenv 的项目：Alice 听写、汤姆猫跑酷、一道+、Rewindom、Vanilla WoW 私服。">
-<meta property="og:title" content="5yong">
-<meta property="og:description" content="vvenv 的项目。">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="5yong">
-<meta property="og:image" content="https://5yong.com/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="无用之用">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfaf8">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14130f">
-<meta property="og:url" content="https://5yong.com/">
-<link rel="canonical" href="https://5yong.com/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><style>rect{fill:%23a8442b}path{stroke:%23fbfaf8}@media(prefers-color-scheme:dark){rect{fill:%23e2906f}path{stroke:%2314130f}}</style><rect width='32' height='32' rx='7.5'/><g fill='none' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M21 9.2 H10.8 V15.6'/><path d='M10.8 15.6 H16 A5.6 5.6 0 1 1 10.6 23.9'/></g></svg>">
-<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<style>
-:root {
-  --bg: #fbfaf8;
-  --ink: #1a1917;
-  --ink-soft: #55524c;
-  --ink-faint: #78736a;
-  --line: #e7e3db;
-  --accent: #a8442b;
-  --art-bg: #f3efe6;
-  --art-line: #d3ccbc;
-  --art-ink: #8b8578;
-  --art-accent: #a8442b;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14130f;
-    --ink: #eeece7;
-    --ink-soft: #a6a299;
-    --ink-faint: #837e75;
-    --line: #29271f;
-    --accent: #e2906f;
-    --art-bg: #1e1c16;
-    --art-line: #353127;
-    --art-ink: #706b60;
-    --art-accent: #c97d5e;
-  }
-}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>5yong</title>
+    <meta
+      name="description"
+      content="vvenv 的项目：Alice 听写、汤姆猫跑酷、一道+、Rewindom、Yestino、Vanilla WoW 私服。"
+    />
+    <meta property="og:title" content="5yong" />
+    <meta property="og:description" content="vvenv 的项目。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="5yong" />
+    <meta property="og:image" content="https://5yong.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="无用之用" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fbfaf8"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14130f"
+    />
+    <meta property="og:url" content="https://5yong.com/" />
+    <link rel="canonical" href="https://5yong.com/" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><style>rect{fill:%23a8442b}path{stroke:%23fbfaf8}@media(prefers-color-scheme:dark){rect{fill:%23e2906f}path{stroke:%2314130f}}</style><rect width='32' height='32' rx='7.5'/><g fill='none' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M21 9.2 H10.8 V15.6'/><path d='M10.8 15.6 H16 A5.6 5.6 0 1 1 10.6 23.9'/></g></svg>"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style>
+      :root {
+        --bg: #fbfaf8;
+        --ink: #1a1917;
+        --ink-soft: #55524c;
+        --ink-faint: #78736a;
+        --line: #e7e3db;
+        --accent: #a8442b;
+        --art-bg: #f3efe6;
+        --art-line: #d3ccbc;
+        --art-ink: #8b8578;
+        --art-accent: #a8442b;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14130f;
+          --ink: #eeece7;
+          --ink-soft: #a6a299;
+          --ink-faint: #837e75;
+          --line: #29271f;
+          --accent: #e2906f;
+          --art-bg: #1e1c16;
+          --art-line: #353127;
+          --art-ink: #706b60;
+          --art-accent: #c97d5e;
+        }
+      }
 
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink-soft);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
-  font-size: 1rem;
-  line-height: 1.85;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink-soft);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+        font-size: 1rem;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
 
-.wrap {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 4.5rem 1.5rem 6rem;
-}
+      .wrap {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 4.5rem 1.5rem 6rem;
+      }
 
-.project {
-  margin-top: 3rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--line);
-}
+      .project {
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid var(--line);
+      }
 
-.project:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
+      .project:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
 
-.banner {
-  margin: 0 0 1.35rem;
-  border-radius: 0.375rem;
-  overflow: hidden;
-  background: var(--art-bg);
-  line-height: 0;
-}
+      .banner {
+        margin: 0 0 1.35rem;
+        border-radius: 0.375rem;
+        overflow: hidden;
+        background: var(--art-bg);
+        line-height: 0;
+      }
 
-.banner svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+      .banner svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
 
-h2 {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--ink);
-}
+      h2 {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--ink);
+      }
 
-.what {
-  margin: 0.1rem 0 0;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--ink-faint);
-}
+      .what {
+        margin: 0.1rem 0 0;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: var(--ink-faint);
+      }
 
-.desc { margin: 0.9rem 0 0; }
+      .desc {
+        margin: 0.9rem 0 0;
+      }
 
-.desc code {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.875em;
-  color: var(--ink);
-  white-space: nowrap;
-}
+      .desc code {
+        font-family:
+          ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.875em;
+        color: var(--ink);
+        white-space: nowrap;
+      }
 
-.links {
-  margin: 1rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1.25rem;
-  font-size: 0.9375rem;
-  line-height: 1.7;
-}
+      .links {
+        margin: 1rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 1.25rem;
+        font-size: 0.9375rem;
+        line-height: 1.7;
+      }
 
-.stack {
-  margin: 0.55rem 0 0;
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--ink-faint);
-}
+      .stack {
+        margin: 0.55rem 0 0;
+        font-size: 0.8125rem;
+        line-height: 1.7;
+        color: var(--ink-faint);
+      }
 
-.stack i { font-style: normal; padding: 0 0.4rem; opacity: 0.5; }
+      .stack i {
+        font-style: normal;
+        padding: 0 0.4rem;
+        opacity: 0.5;
+      }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease;
-}
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.15s ease;
+      }
 
-a:hover { border-bottom-color: currentColor; }
+      a:hover {
+        border-bottom-color: currentColor;
+      }
 
-@media (max-width: 34rem) {
-  .wrap { padding-top: 3rem; }
-  .project { margin-top: 2.25rem; padding-top: 2.25rem; }
-}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"5yong","url":"https://5yong.com/","author":{"@type":"Person","alternateName":"vvenv","url":"https://github.com/vvenv"}}</script>
-</head>
-<body>
-<div class="wrap">
+      @media (max-width: 34rem) {
+        .wrap {
+          padding-top: 3rem;
+        }
+        .project {
+          margin-top: 2.25rem;
+          padding-top: 2.25rem;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "5yong",
+        "url": "https://5yong.com/",
+        "author": {
+          "@type": "Person",
+          "alternateName": "vvenv",
+          "url": "https://github.com/vvenv"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <main>
+        <article class="project">
+          <div class="banner">
+            <svg
+              viewBox="0 0 1200 400"
+              role="img"
+              aria-label="音波落在稿纸的横线上，右侧一只怀表"
+            >
+              <g
+                stroke="var(--art-line)"
+                stroke-width="3"
+                stroke-linecap="round"
+              >
+                <line x1="96" y1="112" x2="880" y2="112" />
+                <line x1="96" y1="196" x2="880" y2="196" />
+                <line x1="96" y1="280" x2="880" y2="280" />
+              </g>
+              <g fill="var(--art-accent)">
+                <rect x="120" y="184" width="9" height="24" rx="4" />
+                <rect x="150" y="162" width="9" height="68" rx="4" />
+                <rect x="180" y="176" width="9" height="40" rx="4" />
+                <rect x="210" y="138" width="9" height="116" rx="4" />
+                <rect x="240" y="156" width="9" height="80" rx="4" />
+                <rect x="270" y="120" width="9" height="152" rx="4" />
+                <rect x="300" y="166" width="9" height="60" rx="4" />
+                <rect x="330" y="132" width="9" height="128" rx="4" />
+                <rect x="360" y="150" width="9" height="92" rx="4" />
+                <rect x="390" y="114" width="9" height="164" rx="4" />
+                <rect x="420" y="160" width="9" height="72" rx="4" />
+                <rect x="450" y="140" width="9" height="112" rx="4" />
+                <rect x="480" y="170" width="9" height="52" rx="4" />
+                <rect x="510" y="154" width="9" height="84" rx="4" />
+                <rect x="540" y="178" width="9" height="36" rx="4" />
+                <rect x="570" y="166" width="9" height="60" rx="4" />
+                <rect x="600" y="182" width="9" height="28" rx="4" />
+                <rect x="630" y="174" width="9" height="44" rx="4" />
+                <rect x="660" y="187" width="9" height="18" rx="4" />
+                <rect x="690" y="184" width="9" height="24" rx="4" />
+                <rect x="720" y="190" width="9" height="12" rx="4" />
+                <rect x="750" y="192" width="9" height="8" rx="4" />
+              </g>
+              <g fill="none" stroke="var(--art-accent)" stroke-width="4">
+                <circle cx="1024" cy="204" r="78" />
+                <path
+                  d="M1010 116 l0 -18 a14 14 0 0 1 28 0 l0 18"
+                  stroke-width="5"
+                />
+              </g>
+              <circle
+                cx="1024"
+                cy="204"
+                r="64"
+                fill="none"
+                stroke="var(--art-line)"
+                stroke-width="3"
+              />
+              <g
+                stroke="var(--art-ink)"
+                stroke-width="5"
+                stroke-linecap="round"
+              >
+                <line x1="1024" y1="204" x2="1024" y2="156" />
+                <line x1="1024" y1="204" x2="1058" y2="222" />
+              </g>
+              <circle cx="1024" cy="204" r="6" fill="var(--art-ink)" />
+            </svg>
+          </div>
+          <h2>Alice 听写</h2>
+          <p class="what">英文单词听写 App</p>
+          <p class="desc">
+            拍照或粘贴生成词表，自动朗读，可调语速与间隔，随时重听当前词。标错的词进错词本，可查看、导出、直接开听。内置中考
+            1600、高考 3500
+            和人教、外研、闽教版单元词表。听写时屏幕常亮；切后台、来电、拔耳机会自动暂停。发音源可选
+            Edge 朗读、有道发音或自定义 TTS，逐级兜底。
+          </p>
+          <p class="links">
+            <a href="https://alice.edao.plus">官网与下载</a>
+            <a href="https://github.com/vvenv/alice">源码</a>
+          </p>
+          <p class="stack">
+            Flutter<i>·</i>Android / iOS / Web<i>·</i>GLM-4V 识图<i>·</i>多级
+            TTS 兜底
+          </p>
+        </article>
 
-<main>
+        <article class="project">
+          <div class="banner">
+            <svg
+              viewBox="0 0 1200 400"
+              role="img"
+              aria-label="三条跑道通向地平线，中间一道传送门，猫在跑道上"
+            >
+              <rect
+                x="0"
+                y="118"
+                width="1200"
+                height="282"
+                fill="var(--art-line)"
+                opacity=".5"
+              />
+              <polygon
+                points="440,400 600,112 760,400"
+                fill="var(--art-ink)"
+                opacity=".16"
+              />
+              <g stroke="var(--art-ink)" stroke-width="4" opacity=".55">
+                <line x1="0" y1="118" x2="1200" y2="118" />
+                <line x1="120" y1="400" x2="600" y2="112" />
+                <line x1="440" y1="400" x2="600" y2="112" />
+                <line x1="760" y1="400" x2="600" y2="112" />
+                <line x1="1080" y1="400" x2="600" y2="112" />
+              </g>
+              <g fill="var(--art-accent)" opacity=".9">
+                <rect x="272" y="350" width="26" height="26" />
+                <rect x="348" y="294" width="19" height="19" />
+                <rect x="400" y="246" width="14" height="14" />
+                <rect x="902" y="350" width="26" height="26" />
+                <rect x="833" y="294" width="19" height="19" />
+                <rect x="786" y="246" width="14" height="14" />
+              </g>
+              <ellipse
+                cx="600"
+                cy="220"
+                rx="78"
+                ry="56"
+                fill="var(--art-accent)"
+                opacity=".18"
+              />
+              <ellipse
+                cx="600"
+                cy="220"
+                rx="78"
+                ry="56"
+                fill="none"
+                stroke="var(--art-accent)"
+                stroke-width="10"
+              />
+              <g fill="var(--art-ink)">
+                <rect x="566" y="300" width="18" height="18" />
+                <rect x="616" y="300" width="18" height="18" />
+                <rect x="562" y="316" width="76" height="58" />
+                <rect x="576" y="374" width="20" height="20" />
+                <rect x="604" y="374" width="20" height="20" />
+              </g>
+              <g fill="var(--art-bg)">
+                <rect x="580" y="334" width="14" height="14" />
+                <rect x="606" y="334" width="14" height="14" />
+              </g>
+            </svg>
+          </div>
+          <h2>汤姆猫跑酷</h2>
+          <p class="what">原生 Android 3D 像素跑酷</p>
+          <p class="desc">
+            三条跑道，左右换道、跳跃、铲滑。穿过传送门进入六个世界，配色、景物与重力各不相同。路上会刷出
+            88
+            件中国文物，每件带朝代与一句说明，捡到后可在藏品里翻看。金币可在小屋里装扮。免费，无广告，无内购，进度存在本地。
+          </p>
+          <p class="links">
+            <a href="https://run.edao.plus">官网与下载</a>
+            <a href="https://github.com/vvenv/tomrun">源码</a>
+          </p>
+          <p class="stack">Kotlin<i>·</i>OpenGL ES 2.0<i>·</i>Android 7.0+</p>
+        </article>
 
-  <article class="project">
-    <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="音波落在稿纸的横线上，右侧一只怀表">
-      <g stroke="var(--art-line)" stroke-width="3" stroke-linecap="round">
-        <line x1="96" y1="112" x2="880" y2="112"/>
-        <line x1="96" y1="196" x2="880" y2="196"/>
-        <line x1="96" y1="280" x2="880" y2="280"/>
-      </g>
-      <g fill="var(--art-accent)">
-        <rect x="120" y="184" width="9" height="24" rx="4"/>
-        <rect x="150" y="162" width="9" height="68" rx="4"/>
-        <rect x="180" y="176" width="9" height="40" rx="4"/>
-        <rect x="210" y="138" width="9" height="116" rx="4"/>
-        <rect x="240" y="156" width="9" height="80" rx="4"/>
-        <rect x="270" y="120" width="9" height="152" rx="4"/>
-        <rect x="300" y="166" width="9" height="60" rx="4"/>
-        <rect x="330" y="132" width="9" height="128" rx="4"/>
-        <rect x="360" y="150" width="9" height="92" rx="4"/>
-        <rect x="390" y="114" width="9" height="164" rx="4"/>
-        <rect x="420" y="160" width="9" height="72" rx="4"/>
-        <rect x="450" y="140" width="9" height="112" rx="4"/>
-        <rect x="480" y="170" width="9" height="52" rx="4"/>
-        <rect x="510" y="154" width="9" height="84" rx="4"/>
-        <rect x="540" y="178" width="9" height="36" rx="4"/>
-        <rect x="570" y="166" width="9" height="60" rx="4"/>
-        <rect x="600" y="182" width="9" height="28" rx="4"/>
-        <rect x="630" y="174" width="9" height="44" rx="4"/>
-        <rect x="660" y="187" width="9" height="18" rx="4"/>
-        <rect x="690" y="184" width="9" height="24" rx="4"/>
-        <rect x="720" y="190" width="9" height="12" rx="4"/>
-        <rect x="750" y="192" width="9" height="8" rx="4"/>
-      </g>
-      <g fill="none" stroke="var(--art-accent)" stroke-width="4">
-        <circle cx="1024" cy="204" r="78"/>
-        <path d="M1010 116 l0 -18 a14 14 0 0 1 28 0 l0 18" stroke-width="5"/>
-      </g>
-      <circle cx="1024" cy="204" r="64" fill="none" stroke="var(--art-line)" stroke-width="3"/>
-      <g stroke="var(--art-ink)" stroke-width="5" stroke-linecap="round">
-        <line x1="1024" y1="204" x2="1024" y2="156"/>
-        <line x1="1024" y1="204" x2="1058" y2="222"/>
-      </g>
-      <circle cx="1024" cy="204" r="6" fill="var(--art-ink)"/>
-    </svg></div>
-    <h2>Alice 听写</h2>
-    <p class="what">英文单词听写 App</p>
-    <p class="desc">拍照或粘贴生成词表，自动朗读，可调语速与间隔，随时重听当前词。标错的词进错词本，可查看、导出、直接开听。内置中考 1600、高考 3500 和人教、外研、闽教版单元词表。听写时屏幕常亮；切后台、来电、拔耳机会自动暂停。发音源可选 Edge 朗读、有道发音或自定义 TTS，逐级兜底。</p>
-    <p class="links">
-      <a href="https://alice.edao.plus">官网与下载</a>
-      <a href="https://github.com/vvenv/alice">源码</a>
-    </p>
-    <p class="stack">Flutter<i>·</i>Android / iOS / Web<i>·</i>GLM-4V 识图<i>·</i>多级 TTS 兜底</p>
-  </article>
+        <article class="project">
+          <div class="banner">
+            <svg
+              viewBox="0 0 1200 400"
+              role="img"
+              aria-label="弦图：四个直角三角形绕中央斜正方形；两侧是同一道题的另两种画法"
+            >
+              <defs>
+                <g id="xt">
+                  <g fill="var(--art-accent)" opacity=".2">
+                    <polygon points="0,0 180,0 0,120" />
+                    <polygon points="300,0 300,180 180,0" />
+                    <polygon points="300,300 120,300 300,180" />
+                    <polygon points="0,300 0,120 120,300" />
+                  </g>
+                  <polygon
+                    points="180,0 300,180 120,300 0,120"
+                    fill="none"
+                    stroke="var(--art-accent)"
+                    stroke-width="5"
+                    stroke-linejoin="round"
+                  />
+                  <rect
+                    x="0"
+                    y="0"
+                    width="300"
+                    height="300"
+                    fill="none"
+                    stroke="var(--art-ink)"
+                    stroke-width="5"
+                  />
+                  <g
+                    fill="none"
+                    stroke="var(--art-ink)"
+                    stroke-width="4"
+                    opacity=".65"
+                  >
+                    <polyline points="0,30 30,30 30,0" />
+                    <polyline points="270,0 270,30 300,30" />
+                    <polyline points="300,270 270,270 270,300" />
+                    <polyline points="30,300 30,270 0,270" />
+                  </g>
+                </g>
+              </defs>
+              <use
+                href="#xt"
+                transform="translate(120 118) scale(0.55)"
+                opacity=".3"
+              />
+              <use
+                href="#xt"
+                transform="translate(915 118) scale(0.55)"
+                opacity=".3"
+              />
+              <use href="#xt" transform="translate(450 50)" />
+            </svg>
+          </div>
+          <h2>一道+</h2>
+          <p class="what">小学奥数讲解工具</p>
+          <p class="desc">
+            面向 3–6
+            年级。每道题给分步图文讲解、多解法对照与结构化可视化场景，并与方法手册互链。不做题库堆砌。
+          </p>
+          <p class="links">
+            <a href="https://edao.plus">edao.plus</a>
+            <a href="https://github.com/vvenv/onemath">源码</a>
+          </p>
+          <p class="stack">React Router<i>·</i>Vite<i>·</i>预渲染</p>
+        </article>
 
-  <article class="project">
-    <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="三条跑道通向地平线，中间一道传送门，猫在跑道上">
-      <rect x="0" y="118" width="1200" height="282" fill="var(--art-line)" opacity=".5"/>
-      <polygon points="440,400 600,112 760,400" fill="var(--art-ink)" opacity=".16"/>
-      <g stroke="var(--art-ink)" stroke-width="4" opacity=".55">
-        <line x1="0" y1="118" x2="1200" y2="118"/>
-        <line x1="120" y1="400" x2="600" y2="112"/>
-        <line x1="440" y1="400" x2="600" y2="112"/>
-        <line x1="760" y1="400" x2="600" y2="112"/>
-        <line x1="1080" y1="400" x2="600" y2="112"/>
-      </g>
-      <g fill="var(--art-accent)" opacity=".9">
-        <rect x="272" y="350" width="26" height="26"/>
-        <rect x="348" y="294" width="19" height="19"/>
-        <rect x="400" y="246" width="14" height="14"/>
-        <rect x="902" y="350" width="26" height="26"/>
-        <rect x="833" y="294" width="19" height="19"/>
-        <rect x="786" y="246" width="14" height="14"/>
-      </g>
-      <ellipse cx="600" cy="220" rx="78" ry="56" fill="var(--art-accent)" opacity=".18"/>
-      <ellipse cx="600" cy="220" rx="78" ry="56" fill="none" stroke="var(--art-accent)" stroke-width="10"/>
-      <g fill="var(--art-ink)">
-        <rect x="566" y="300" width="18" height="18"/>
-        <rect x="616" y="300" width="18" height="18"/>
-        <rect x="562" y="316" width="76" height="58"/>
-        <rect x="576" y="374" width="20" height="20"/>
-        <rect x="604" y="374" width="20" height="20"/>
-      </g>
-      <g fill="var(--art-bg)">
-        <rect x="580" y="334" width="14" height="14"/>
-        <rect x="606" y="334" width="14" height="14"/>
-      </g>
-    </svg></div>
-    <h2>汤姆猫跑酷</h2>
-    <p class="what">原生 Android 3D 像素跑酷</p>
-    <p class="desc">三条跑道，左右换道、跳跃、铲滑。穿过传送门进入六个世界，配色、景物与重力各不相同。路上会刷出 88 件中国文物，每件带朝代与一句说明，捡到后可在藏品里翻看。金币可在小屋里装扮。免费，无广告，无内购，进度存在本地。</p>
-    <p class="links">
-      <a href="https://run.edao.plus">官网与下载</a>
-      <a href="https://github.com/vvenv/tomrun">源码</a>
-    </p>
-    <p class="stack">Kotlin<i>·</i>OpenGL ES 2.0<i>·</i>Android 7.0+</p>
-  </article>
+        <article class="project">
+          <div class="banner">
+            <svg
+              viewBox="0 0 1200 400"
+              role="img"
+              aria-label="模块挂在一条底座导轨上，实心的是已开通，虚线的是未开通"
+            >
+              <g stroke="var(--art-line)" stroke-width="3">
+                <line x1="215" y1="146" x2="215" y2="182" />
+                <line x1="405" y1="146" x2="405" y2="182" />
+                <line x1="595" y1="146" x2="595" y2="182" />
+                <line x1="785" y1="146" x2="785" y2="182" />
+                <line x1="975" y1="146" x2="975" y2="182" />
+                <line x1="310" y1="218" x2="310" y2="254" />
+                <line x1="500" y1="218" x2="500" y2="254" />
+                <line x1="690" y1="218" x2="690" y2="254" />
+                <line x1="880" y1="218" x2="880" y2="254" />
+              </g>
+              <rect
+                x="100"
+                y="182"
+                width="1000"
+                height="36"
+                rx="8"
+                fill="var(--art-ink)"
+              />
+              <g
+                fill="var(--art-accent)"
+                fill-opacity=".18"
+                stroke="var(--art-accent)"
+                stroke-width="4"
+              >
+                <rect x="140" y="70" width="150" height="76" rx="7" />
+                <rect x="520" y="70" width="150" height="76" rx="7" />
+                <rect x="710" y="70" width="150" height="76" rx="7" />
+                <rect x="235" y="254" width="150" height="76" rx="7" />
+                <rect x="615" y="254" width="150" height="76" rx="7" />
+              </g>
+              <g
+                fill="none"
+                stroke="var(--art-line)"
+                stroke-width="4"
+                stroke-dasharray="10 9"
+              >
+                <rect x="330" y="70" width="150" height="76" rx="7" />
+                <rect x="900" y="70" width="150" height="76" rx="7" />
+                <rect x="425" y="254" width="150" height="76" rx="7" />
+                <rect x="805" y="254" width="150" height="76" rx="7" />
+              </g>
+            </svg>
+          </div>
+          <h2>Rewindom</h2>
+          <p class="what">给编码 Agent 用的多租户 SaaS 底座</p>
+          <p class="desc">
+            内核不含业务代码，业务以 TypeScript
+            模块挂载，按租户开关——未开通不挂路由、不进侧栏、不产生数据。内置认证与
+            JWT、多租户与套餐配额、PBAC、审计、通知、任务中心、官网 CMS 与
+            SSR、错误日志与慢查询、平台计费与站点收款。人与 Agent 走同一条
+            <code>Spec → gen → check</code>
+            闭环，机器闸门校验契约、依赖与装配。单进程 Docker Compose 部署。
+          </p>
+          <p class="links">
+            <a href="https://rewindom.com">rewindom.com</a>
+            <a href="https://rewindom.com/docs">文档</a>
+            <a href="https://github.com/vvenv/rewindom">源码</a>
+          </p>
+          <p class="stack">TypeScript<i>·</i>模块化单体<i>·</i>开源</p>
+        </article>
 
-  <article class="project">
-    <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="弦图：四个直角三角形绕中央斜正方形；两侧是同一道题的另两种画法">
-      <defs>
-        <g id="xt">
-          <g fill="var(--art-accent)" opacity=".2">
-            <polygon points="0,0 180,0 0,120"/>
-            <polygon points="300,0 300,180 180,0"/>
-            <polygon points="300,300 120,300 300,180"/>
-            <polygon points="0,300 0,120 120,300"/>
-          </g>
-          <polygon points="180,0 300,180 120,300 0,120" fill="none" stroke="var(--art-accent)" stroke-width="5" stroke-linejoin="round"/>
-          <rect x="0" y="0" width="300" height="300" fill="none" stroke="var(--art-ink)" stroke-width="5"/>
-          <g fill="none" stroke="var(--art-ink)" stroke-width="4" opacity=".65">
-            <polyline points="0,30 30,30 30,0"/>
-            <polyline points="270,0 270,30 300,30"/>
-            <polyline points="300,270 270,270 270,300"/>
-            <polyline points="30,300 30,270 0,270"/>
-          </g>
-        </g>
-      </defs>
-      <use href="#xt" transform="translate(120 118) scale(0.55)" opacity=".3"/>
-      <use href="#xt" transform="translate(915 118) scale(0.55)" opacity=".3"/>
-      <use href="#xt" transform="translate(450 50)"/>
-    </svg></div>
-    <h2>一道+</h2>
-    <p class="what">小学奥数讲解工具</p>
-    <p class="desc">面向 3–6 年级。每道题给分步图文讲解、多解法对照与结构化可视化场景，并与方法手册互链。不做题库堆砌。</p>
-    <p class="links">
-      <a href="https://edao.plus">edao.plus</a>
-      <a href="https://github.com/vvenv/onemath">源码</a>
-    </p>
-    <p class="stack">React Router<i>·</i>Vite<i>·</i>预渲染</p>
-  </article>
+        <article class="project">
+          <div class="banner">
+            <svg
+              viewBox="0 0 1200 400"
+              role="img"
+              aria-label="雷达扫到的多个信号汇入一条时间线，中间一节高亮表示正在发展"
+            >
+              <g fill="none" stroke="var(--art-line)" stroke-width="3">
+                <circle cx="250" cy="200" r="150" />
+                <circle cx="250" cy="200" r="104" />
+                <circle cx="250" cy="200" r="58" />
+                <line x1="100" y1="200" x2="400" y2="200" />
+                <line x1="250" y1="50" x2="250" y2="350" />
+              </g>
+              <path
+                d="M250 200 L250 50 A150 150 0 0 1 380 125 Z"
+                fill="var(--art-accent)"
+                fill-opacity=".15"
+              />
+              <path
+                d="M250 200 L250 50 A150 150 0 0 1 380 125"
+                fill="none"
+                stroke="var(--art-accent)"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <g fill="var(--art-accent)">
+                <rect x="322" y="112" width="10" height="10" rx="2" />
+                <rect x="314" y="146" width="12" height="12" rx="2" />
+                <rect x="200" y="262" width="9" height="9" rx="2" />
+              </g>
+              <g
+                fill="none"
+                stroke="var(--art-line)"
+                stroke-width="3"
+                stroke-linecap="round"
+              >
+                <path d="M392 150 C450 150 466 200 540 200" />
+                <path d="M400 200 C446 200 468 200 540 200" />
+                <path d="M392 250 C450 250 466 200 540 200" />
+              </g>
+              <line
+                x1="552"
+                y1="200"
+                x2="1110"
+                y2="200"
+                stroke="var(--art-ink)"
+                stroke-width="4"
+                stroke-linecap="round"
+                opacity=".5"
+              />
+              <g
+                stroke="var(--art-line)"
+                stroke-width="3"
+                stroke-linecap="round"
+              >
+                <line x1="552" y1="214" x2="552" y2="238" />
+                <line x1="690" y1="214" x2="690" y2="238" />
+                <line x1="840" y1="216" x2="840" y2="244" />
+                <line x1="990" y1="214" x2="990" y2="238" />
+                <line x1="1110" y1="214" x2="1110" y2="238" />
+              </g>
+              <circle
+                cx="840"
+                cy="200"
+                r="22"
+                fill="none"
+                stroke="var(--art-accent)"
+                stroke-width="3"
+                opacity=".35"
+              />
+              <g fill="var(--art-bg)" stroke="var(--art-accent)" stroke-width="4">
+                <circle cx="552" cy="200" r="12" />
+                <circle cx="690" cy="200" r="12" />
+                <circle cx="990" cy="200" r="12" />
+                <circle cx="1110" cy="200" r="12" />
+              </g>
+              <circle cx="840" cy="200" r="12" fill="var(--art-accent)" />
+            </svg>
+          </div>
+          <h2>Yestino</h2>
+          <p class="what">多源事件雷达</p>
+          <p class="desc">
+            持续抓取公开信源，把多家媒体对同一件事的报道聚合成一个事件、按发生顺序重建时间线，每条说法都保留原文链接可逐条核对；有后续就在原事件上就地更新，而不是再发一条。首页分「正在升温」与「正在发生」，排序就是观点：什么在起变化、什么在进行中。整站不写业务代码——在
+            Rewindom 上开通事件雷达与通讯模块、配好采集源即上线，支持邮件与
+            RSS 订阅。
+          </p>
+          <p class="links">
+            <a href="https://yestino.com">yestino.com</a>
+            <a href="https://yestino.com/subscribe">邮件订阅</a>
+            <a href="https://yestino.com/feed.xml">RSS</a>
+          </p>
+          <p class="stack">
+            Rewindom 租户站<i>·</i>事件雷达模块<i>·</i>RSS / 邮件订阅
+          </p>
+        </article>
 
-  <article class="project">
-    <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="模块挂在一条底座导轨上，实心的是已开通，虚线的是未开通">
-      <g stroke="var(--art-line)" stroke-width="3">
-        <line x1="215" y1="146" x2="215" y2="182"/>
-        <line x1="405" y1="146" x2="405" y2="182"/>
-        <line x1="595" y1="146" x2="595" y2="182"/>
-        <line x1="785" y1="146" x2="785" y2="182"/>
-        <line x1="975" y1="146" x2="975" y2="182"/>
-        <line x1="310" y1="218" x2="310" y2="254"/>
-        <line x1="500" y1="218" x2="500" y2="254"/>
-        <line x1="690" y1="218" x2="690" y2="254"/>
-        <line x1="880" y1="218" x2="880" y2="254"/>
-      </g>
-      <rect x="100" y="182" width="1000" height="36" rx="8" fill="var(--art-ink)"/>
-      <g fill="var(--art-accent)" fill-opacity=".18" stroke="var(--art-accent)" stroke-width="4">
-        <rect x="140" y="70" width="150" height="76" rx="7"/>
-        <rect x="520" y="70" width="150" height="76" rx="7"/>
-        <rect x="710" y="70" width="150" height="76" rx="7"/>
-        <rect x="235" y="254" width="150" height="76" rx="7"/>
-        <rect x="615" y="254" width="150" height="76" rx="7"/>
-      </g>
-      <g fill="none" stroke="var(--art-line)" stroke-width="4" stroke-dasharray="10 9">
-        <rect x="330" y="70" width="150" height="76" rx="7"/>
-        <rect x="900" y="70" width="150" height="76" rx="7"/>
-        <rect x="425" y="254" width="150" height="76" rx="7"/>
-        <rect x="805" y="254" width="150" height="76" rx="7"/>
-      </g>
-    </svg></div>
-    <h2>Rewindom</h2>
-    <p class="what">给编码 Agent 用的多租户 SaaS 底座</p>
-    <p class="desc">内核不含业务代码，业务以 TypeScript 模块挂载，按租户开关——未开通不挂路由、不进侧栏、不产生数据。内置认证与 JWT、多租户与套餐配额、PBAC、审计、通知、任务中心、官网 CMS 与 SSR、错误日志与慢查询、平台计费与站点收款。人与 Agent 走同一条 <code>Spec → gen → check</code> 闭环，机器闸门校验契约、依赖与装配。单进程 Docker Compose 部署。</p>
-    <p class="links">
-      <a href="https://rewindom.com">rewindom.com</a>
-      <a href="https://rewindom.com/docs">文档</a>
-      <a href="https://github.com/vvenv/rewindom">源码</a>
-    </p>
-    <p class="stack">TypeScript<i>·</i>模块化单体<i>·</i>开源</p>
-  </article>
-
-  <article class="project">
-    <div class="banner"><svg viewBox="0 0 1200 400" role="img" aria-label="月下的层叠山脊剪影">
-      <circle cx="982" cy="104" r="46" fill="var(--art-accent)" opacity=".8"/>
-      <g fill="var(--art-ink)" opacity=".55">
-        <rect x="150" y="72" width="5" height="5"/><rect x="268" y="126" width="5" height="5"/>
-        <rect x="392" y="60" width="5" height="5"/><rect x="486" y="118" width="5" height="5"/>
-        <rect x="604" y="80" width="5" height="5"/><rect x="712" y="136" width="5" height="5"/>
-        <rect x="820" y="66" width="5" height="5"/><rect x="1094" y="150" width="5" height="5"/>
-        <rect x="1142" y="88" width="5" height="5"/><rect x="88" y="158" width="5" height="5"/>
-      </g>
-      <polygon points="0,300 140,208 262,268 402,178 540,250 700,168 862,246 1000,194 1132,258 1200,220 1200,400 0,400" fill="var(--art-line)"/>
-      <polygon points="0,342 182,268 332,320 480,250 640,312 820,244 980,308 1132,262 1200,300 1200,400 0,400" fill="var(--art-ink)" opacity=".38"/>
-      <polygon points="0,380 160,330 322,370 470,322 640,368 800,320 962,364 1120,326 1200,354 1200,400 0,400" fill="var(--art-ink)" opacity=".62"/>
-    </svg></div>
-    <h2>Vanilla WoW 私服</h2>
-    <p class="what">macOS Apple Silicon 上的 1.12.1</p>
-    <p class="desc">原版 Blizzard 客户端跑在 WoWSilicon 的 Wine 上，服务端是 Docker 里的 VMaNGOS，另配一个 SwiftUI 启动器。README 记录了完整搭建过程与踩坑，包括后来把服务端整个迁到 VPS。</p>
-    <p class="links">
-      <a href="https://github.com/vvenv/wow">源码与踩坑记录</a>
-    </p>
-    <p class="stack">VMaNGOS<i>·</i>Wine<i>·</i>SwiftUI<i>·</i>Docker</p>
-  </article>
-
-</main>
-
-</div>
-</body>
+        <article class="project">
+          <div class="banner">
+            <svg
+              viewBox="0 0 1200 400"
+              role="img"
+              aria-label="月下的层叠山脊剪影"
+            >
+              <circle
+                cx="982"
+                cy="104"
+                r="46"
+                fill="var(--art-accent)"
+                opacity=".8"
+              />
+              <g fill="var(--art-ink)" opacity=".55">
+                <rect x="150" y="72" width="5" height="5" />
+                <rect x="268" y="126" width="5" height="5" />
+                <rect x="392" y="60" width="5" height="5" />
+                <rect x="486" y="118" width="5" height="5" />
+                <rect x="604" y="80" width="5" height="5" />
+                <rect x="712" y="136" width="5" height="5" />
+                <rect x="820" y="66" width="5" height="5" />
+                <rect x="1094" y="150" width="5" height="5" />
+                <rect x="1142" y="88" width="5" height="5" />
+                <rect x="88" y="158" width="5" height="5" />
+              </g>
+              <polygon
+                points="0,300 140,208 262,268 402,178 540,250 700,168 862,246 1000,194 1132,258 1200,220 1200,400 0,400"
+                fill="var(--art-line)"
+              />
+              <polygon
+                points="0,342 182,268 332,320 480,250 640,312 820,244 980,308 1132,262 1200,300 1200,400 0,400"
+                fill="var(--art-ink)"
+                opacity=".38"
+              />
+              <polygon
+                points="0,380 160,330 322,370 470,322 640,368 800,320 962,364 1120,326 1200,354 1200,400 0,400"
+                fill="var(--art-ink)"
+                opacity=".62"
+              />
+            </svg>
+          </div>
+          <h2>Vanilla WoW 私服</h2>
+          <p class="what">macOS Apple Silicon 上的 1.12.1</p>
+          <p class="desc">
+            原版 Blizzard 客户端跑在 WoWSilicon 的 Wine 上，服务端是 Docker 里的
+            VMaNGOS，另配一个 SwiftUI 启动器。README
+            记录了完整搭建过程与踩坑，包括后来把服务端整个迁到 VPS。
+          </p>
+          <p class="links">
+            <a href="https://github.com/vvenv/wow">源码与踩坑记录</a>
+          </p>
+          <p class="stack">VMaNGOS<i>·</i>Wine<i>·</i>SwiftUI<i>·</i>Docker</p>
+        </article>
+      </main>
+    </div>
+  </body>
 </html>
