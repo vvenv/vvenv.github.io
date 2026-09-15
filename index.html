@@ -90,6 +90,24 @@
         padding: 4.5rem 1.5rem 6rem;
       }
 
+      header {
+        margin: 0 0 3rem;
+        padding: 0 0 3rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--ink);
+      }
+
+      .lede {
+        margin: 0.9rem 0 0;
+      }
+
       .project {
         margin-top: 3rem;
         padding-top: 3rem;
@@ -176,9 +194,19 @@
         border-bottom-color: currentColor;
       }
 
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-bottom-color: transparent;
+      }
+
       @media (max-width: 34rem) {
         .wrap {
           padding-top: 3rem;
+        }
+        header {
+          margin-bottom: 2.25rem;
+          padding-bottom: 2.25rem;
         }
         .project {
           margin-top: 2.25rem;
@@ -194,14 +222,25 @@
         "url": "https://5yong.com/",
         "author": {
           "@type": "Person",
-          "alternateName": "vvenv",
-          "url": "https://github.com/vvenv"
+          "name": "李文富",
+          "alternateName": ["Wenfu Li", "vvenv"],
+          "url": "https://5yong.com/about.html"
         }
       }
     </script>
   </head>
   <body>
     <div class="wrap">
+      <header>
+        <h1>李文富</h1>
+        <p class="lede">
+          一些实验性的项目、练手的项目，还有一些没什么用但很想做的东西。
+        </p>
+        <p class="links">
+          <a href="about.html">简历</a>
+          <a href="https://github.com/vvenv">GitHub</a>
+        </p>
+      </header>
       <main>
         <article class="project">
           <div class="banner">

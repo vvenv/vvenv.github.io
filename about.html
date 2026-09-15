@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>李文富</title>
+    <meta
+      name="description"
+      content="李文富，福州。前端出身，带过团队，做过架构。现在自己做产品。"
+    />
+    <meta property="og:title" content="李文富" />
+    <meta
+      property="og:description"
+      content="福州。前端出身，带过团队，做过架构。现在自己做产品。"
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="5yong" />
+    <meta property="og:image" content="https://5yong.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="无用之用" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fbfaf8"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14130f"
+    />
+    <meta property="og:url" content="https://5yong.com/about.html" />
+    <link rel="canonical" href="https://5yong.com/about.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://5yong.com/about.html" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://5yong.com/about.html?lang=en"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><style>rect{fill:%23a8442b}path{stroke:%23fbfaf8}@media(prefers-color-scheme:dark){rect{fill:%23e2906f}path{stroke:%2314130f}}</style><rect width='32' height='32' rx='7.5'/><g fill='none' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M21 9.2 H10.8 V15.6'/><path d='M10.8 15.6 H16 A5.6 5.6 0 1 1 10.6 23.9'/></g></svg>"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      (function () {
+        var q = new URLSearchParams(location.search).get("lang");
+        var stored;
+        try {
+          stored = localStorage.getItem("lang");
+        } catch (e) {}
+        var lang =
+          q === "en" || q === "zh"
+            ? q
+            : stored === "en" || stored === "zh"
+              ? stored
+              : "zh";
+        document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+        document.documentElement.dataset.lang = lang;
+      })();
+    </script>
+    <style>
+      :root {
+        --bg: #fbfaf8;
+        --ink: #1a1917;
+        --ink-soft: #55524c;
+        --ink-faint: #78736a;
+        --line: #e7e3db;
+        --accent: #a8442b;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14130f;
+          --ink: #eeece7;
+          --ink-soft: #a6a299;
+          --ink-faint: #837e75;
+          --line: #29271f;
+          --accent: #e2906f;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      html[data-lang="zh"] .en {
+        display: none;
+      }
+      html[data-lang="en"] .zh {
+        display: none;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink-soft);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+        font-size: 1rem;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      .wrap {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 4.5rem 1.5rem 6rem;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        margin: 0 0 3.5rem;
+      }
+
+      .langs {
+        display: flex;
+        gap: 1.25rem;
+        font-size: 0.9375rem;
+      }
+
+      .langs button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        font: inherit;
+        color: var(--accent);
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.15s ease;
+      }
+
+      .langs button:hover {
+        border-bottom-color: currentColor;
+      }
+
+      .langs button[aria-pressed="true"] {
+        color: var(--ink);
+        cursor: default;
+        border-bottom-color: transparent;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--ink);
+      }
+
+      .meta {
+        margin: 0.45rem 0 0;
+        font-size: 0.9375rem;
+        color: var(--ink-faint);
+      }
+
+      .meta a {
+        color: inherit;
+      }
+
+      .meta a:hover {
+        color: var(--accent);
+      }
+
+      .lede {
+        margin: 1.15rem 0 0;
+      }
+
+      h2 {
+        margin: 2.75rem 0 0;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        line-height: 1.6;
+        color: var(--ink-faint);
+      }
+
+      .role {
+        display: grid;
+        grid-template-columns: 8.25rem minmax(0, 1fr);
+        column-gap: 1.5rem;
+        padding: 1.25rem 0 0.15rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .role:first-of-type {
+        margin-top: 0.85rem;
+      }
+
+      .when {
+        margin: 0.2rem 0 0;
+        font-size: 0.8125rem;
+        line-height: 1.6;
+        color: var(--ink-faint);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .role h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--ink);
+      }
+
+      .title {
+        margin: 0.05rem 0 0;
+        font-size: 0.875rem;
+        color: var(--ink-faint);
+      }
+
+      .role ul {
+        margin: 0.45rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .role li {
+        position: relative;
+        padding-left: 0.9rem;
+      }
+
+      .role li + li {
+        margin-top: 0.15rem;
+      }
+
+      .role li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 0.35rem;
+        height: 1px;
+        background: var(--ink-faint);
+        opacity: 0.7;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition:
+          border-color 0.15s ease,
+          color 0.15s ease;
+      }
+
+      a:hover {
+        border-bottom-color: currentColor;
+      }
+
+      a:focus-visible,
+      .langs button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-bottom-color: transparent;
+      }
+
+      @media (max-width: 34rem) {
+        .wrap {
+          padding-top: 3rem;
+        }
+        .top {
+          margin-bottom: 2.5rem;
+        }
+        .role {
+          grid-template-columns: 1fr;
+          row-gap: 0.15rem;
+          padding-top: 1.1rem;
+        }
+        .when {
+          margin-top: 0;
+        }
+      }
+
+      @media print {
+        :root {
+          --bg: #fff;
+          --ink: #111;
+          --ink-soft: #333;
+          --ink-faint: #555;
+          --line: #ddd;
+          --accent: #111;
+        }
+        .wrap {
+          max-width: none;
+          padding: 0;
+        }
+        .top {
+          display: none;
+        }
+        a {
+          color: inherit;
+          border: 0;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "李文富",
+        "alternateName": ["Wenfu Li", "vvenv"],
+        "jobTitle": "Frontend engineer",
+        "email": "mailto:wenfu.li@qq.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Fuzhou",
+          "addressCountry": "CN"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Sichuan University"
+        },
+        "url": "https://5yong.com/about.html",
+        "sameAs": ["https://github.com/vvenv"]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top">
+        <a href="./">
+          <span class="zh">作品</span>
+          <span class="en">Projects</span>
+        </a>
+        <div class="langs" role="group" aria-label="Language">
+          <button type="button" data-lang="zh">中文</button>
+          <button type="button" data-lang="en">English</button>
+        </div>
+      </div>
+
+      <main>
+        <h1>
+          <span class="zh">李文富</span>
+          <span class="en">Wenfu Li</span>
+        </h1>
+        <p class="meta">
+          <span class="zh">福州</span>
+          <span class="en">Fuzhou</span>
+          ·
+          <a href="mailto:wenfu.li@qq.com">wenfu.li@qq.com</a>
+          ·
+          <a href="https://github.com/vvenv">GitHub</a>
+        </p>
+        <p class="lede">
+          <span class="zh"
+            >前端开发，带过团队，做过从物联网到电商的架构。</span
+          >
+          <span class="en"
+            >Frontend engineer — former team lead and architect, from IoT to
+            commerce.</span
+          >
+        </p>
+
+        <h2>
+          <span class="zh">经历</span>
+          <span class="en">Experience</span>
+        </h2>
+
+        <article class="role">
+          <p class="when">2022.10 – 2026.05</p>
+          <div>
+            <h3>Firework</h3>
+            <p class="title">
+              <span class="zh">高级前端</span>
+              <span class="en">Senior Frontend Developer</span>
+            </p>
+            <ul>
+              <li>
+                <span class="zh">电商 SaaS 的核心前端与性能。</span>
+                <span class="en"
+                  >Core frontend and performance for an e-commerce SaaS
+                  platform.</span
+                >
+              </li>
+              <li>
+                <span class="zh">可购物视频播放器：实现、维护与支持。</span>
+                <span class="en"
+                  >Built and maintained a shoppable video player.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2022.01 – 2022.09</p>
+          <div>
+            <h3>
+              <span class="zh">福州燎烽网络</span>
+              <span class="en">Liaofeng Network</span>
+            </h3>
+            <p class="title">
+              <span class="zh">前端</span>
+              <span class="en">Web Frontend Developer</span>
+            </p>
+            <ul>
+              <li>
+                <span class="zh">电商 SaaS 的前端架构。</span>
+                <span class="en"
+                  >Frontend architecture for an e-commerce SaaS
+                  platform.</span
+                >
+              </li>
+              <li>
+                <span class="zh">带团队做完可视化拖拽建站。</span>
+                <span class="en"
+                  >Led the team that shipped a visual drag-and-drop site
+                  builder.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2019.09 – 2022.01</p>
+          <div>
+            <h3>
+              <span class="zh">立达信物联网</span>
+              <span class="en">Leedarson IoT</span>
+            </h3>
+            <p class="title">
+              <span class="zh">高级技术经理</span>
+              <span class="en">Senior Technical Manager</span>
+            </p>
+            <ul>
+              <li>
+                <span class="zh"
+                  >公司物联网平台的前端架构，带研发做完前后端。</span
+                >
+                <span class="en"
+                  >Led frontend architecture for the IoT platform, and the team
+                  that shipped both ends.</span
+                >
+              </li>
+              <li>
+                <span class="zh"
+                  >前端全面 TypeScript；立下 REST 规范；用 Next.js 做
+                  BFF。</span
+                >
+                <span class="en"
+                  >Moved frontend to TypeScript, set REST conventions, and built
+                  a Next.js BFF.</span
+                >
+              </li>
+              <li>
+                <span class="zh">用 GitLab MR 把流程和 code review 做严。</span>
+                <span class="en"
+                  >Brought frontend onto GitLab merge requests and strict
+                  review.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2018.11 – 2019.09</p>
+          <div>
+            <h3>
+              <span class="zh">像素空间</span>
+              <span class="en">Xiangsukongjian</span>
+            </h3>
+            <p class="title">
+              <span class="zh">技术总监</span>
+              <span class="en">Technical Director</span>
+            </p>
+            <ul>
+              <li>
+                <span class="zh">创业公司的技术架构；小程序与小游戏。</span>
+                <span class="en"
+                  >Technical architecture for the startup: mini programs and
+                  mini games.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2014.10 – 2018.11</p>
+          <div>
+            <h3>
+              <span class="zh">网龙</span>
+              <span class="en">NetDragon</span>
+            </h3>
+            <p class="title">
+              <span class="zh">前端负责人</span>
+              <span class="en">Frontend Lead</span>
+            </p>
+            <ul>
+              <li>
+                <span class="zh">带四十人前端，做教育和社交业务。</span>
+                <span class="en"
+                  >Led a 40-person frontend team on education and social
+                  products.</span
+                >
+              </li>
+              <li>
+                <span class="zh"
+                  >立规范、做组件库和工具库，把构建与发布自动化。</span
+                >
+                <span class="en"
+                  >Set the frontend standards, shipped shared libraries, and
+                  automated build and deploy.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2013.02 – 2014.10</p>
+          <div>
+            <h3>
+              <span class="zh">搜狐畅游</span>
+              <span class="en">Changyou</span>
+            </h3>
+            <p class="title">
+              <span class="zh">前端开发负责人</span>
+              <span class="en">Frontend Development Lead</span>
+            </p>
+            <ul>
+              <li>
+                <span class="zh"
+                  >带团队做大型项目的前端；规范、组件与框架。</span
+                >
+                <span class="en"
+                  >Led frontend for large company projects: standards,
+                  components, and frameworks.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="when">2008.07 – 2013.02</p>
+          <div>
+            <h3>
+              <span class="zh">中兴移动</span>
+              <span class="en">ZTE Mobile</span>
+            </h3>
+            <p class="title">
+              <span class="zh">互联网软件开发工程师</span>
+              <span class="en">Internet Software Engineer</span>
+            </p>
+            <ul>
+              <li>
+                <span class="zh"
+                  >互联网与移动互联网前端，含嵌入式页面。</span
+                >
+                <span class="en"
+                  >Frontend for internet and mobile projects, including embedded
+                  pages.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <h2>
+          <span class="zh">教育</span>
+          <span class="en">Education</span>
+        </h2>
+        <article class="role">
+          <p class="when">1998.09 – 2002.07</p>
+          <div>
+            <h3>
+              <span class="zh">四川大学</span>
+              <span class="en">Sichuan University</span>
+            </h3>
+            <p class="title">
+              <span class="zh">管理科学 · 学士</span>
+              <span class="en">Management Science · Bachelor's</span>
+            </p>
+          </div>
+        </article>
+      </main>
+    </div>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll(".langs button");
+        var titles = { zh: "李文富", en: "Wenfu Li" };
+        var descriptions = {
+          zh: "李文富，福州。前端出身，带过团队，做过架构。现在自己做产品。",
+          en: "Wenfu Li, Fuzhou. Frontend engineer; former team lead and architect. Building independently.",
+        };
+
+        function apply(lang, persist) {
+          root.lang = lang === "en" ? "en" : "zh-CN";
+          root.dataset.lang = lang;
+          document.title = titles[lang];
+          var desc = document.querySelector('meta[name="description"]');
+          if (desc) desc.setAttribute("content", descriptions[lang]);
+          buttons.forEach(function (btn) {
+            btn.setAttribute(
+              "aria-pressed",
+              btn.getAttribute("data-lang") === lang ? "true" : "false",
+            );
+          });
+          if (persist) {
+            try {
+              localStorage.setItem("lang", lang);
+            } catch (e) {}
+            var url = new URL(location.href);
+            if (lang === "en") url.searchParams.set("lang", "en");
+            else url.searchParams.delete("lang");
+            history.replaceState(null, "", url);
+          }
+        }
+
+        apply(root.dataset.lang, false);
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            apply(btn.getAttribute("data-lang"), true);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
