@@ -32,7 +32,11 @@
     />
     <meta property="og:url" content="https://5yong.com/about.html" />
     <link rel="canonical" href="https://5yong.com/about.html" />
-    <link rel="alternate" hreflang="zh-CN" href="https://5yong.com/about.html" />
+    <link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://5yong.com/about.html"
+    />
     <link
       rel="alternate"
       hreflang="en"
@@ -204,6 +208,10 @@
         font-variant-numeric: tabular-nums;
       }
 
+      .when:empty {
+        visibility: hidden;
+      }
+
       .role h3 {
         margin: 0;
         font-size: 1rem;
@@ -279,6 +287,9 @@
         .when {
           margin-top: 0;
         }
+        .when:empty {
+          display: none;
+        }
       }
 
       @media print {
@@ -352,9 +363,7 @@
           <a href="https://github.com/vvenv">GitHub</a>
         </p>
         <p class="lede">
-          <span class="zh"
-            >前端开发，带过团队，做过从物联网到电商的架构。</span
-          >
+          <span class="zh">前端开发，带过团队，做过从物联网到电商的架构。</span>
           <span class="en"
             >Frontend engineer — former team lead and architect, from IoT to
             commerce.</span
@@ -407,8 +416,7 @@
               <li>
                 <span class="zh">电商 SaaS 的前端架构。</span>
                 <span class="en"
-                  >Frontend architecture for an e-commerce SaaS
-                  platform.</span
+                  >Frontend architecture for an e-commerce SaaS platform.</span
                 >
               </li>
               <li>
@@ -557,9 +565,7 @@
             </p>
             <ul>
               <li>
-                <span class="zh"
-                  >互联网与移动互联网前端，含嵌入式页面。</span
-                >
+                <span class="zh">互联网与移动互联网前端，含嵌入式页面。</span>
                 <span class="en"
                   >Frontend for internet and mobile projects, including embedded
                   pages.</span
@@ -583,6 +589,21 @@
             <p class="title">
               <span class="zh">管理科学 · 学士</span>
               <span class="en">Management Science · Bachelor's</span>
+            </p>
+          </div>
+        </article>
+
+        <h2>
+          <span class="zh">证书</span>
+          <span class="en">Certifications</span>
+        </h2>
+        <article class="role">
+          <p class="when"></p>
+          <div>
+            <h3>CET-4</h3>
+            <p class="title">
+              <span class="zh">大学英语四级</span>
+              <span class="en">College English Test Band 4</span>
             </p>
           </div>
         </article>
