@@ -12,7 +12,7 @@ python3 -m http.server 8000
 
 ## 部署
 
-GitHub Pages，源为 `master` 分支根目录，自定义域 [5yong.com](https://5yong.com)（见 `CNAME`）。推上去就生效。
+GitHub Pages，源为 `master` 分支根目录，自定义域 [wenfu.dev](https://wenfu.dev)（见 `CNAME`）。推上去就生效。
 
 ## 目录
 
