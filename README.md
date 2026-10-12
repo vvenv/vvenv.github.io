@@ -21,7 +21,7 @@ index.html              # 首页：介绍 + 项目（含样式、插图）
 about.html              # 简历，中 / English 切换
 og.png                  # 分享卡片图 1200×630
 apple-touch-icon.png    # iOS 主屏图标 180×180
-icon-32.png             # PNG favicon 回退（现代浏览器走内联 SVG）
+icon-32.png             # favicon 32×32（头像裁切）
 CNAME                   # 自定义域
 .nojekyll               # 跳过 Jekyll 处理
 ```
