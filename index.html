@@ -91,9 +91,7 @@
       }
 
       header {
-        margin: 0 0 3rem;
-        padding: 0 0 3rem;
-        border-bottom: 1px solid var(--line);
+        margin: 0 0 2.5rem;
       }
 
       h1 {
@@ -108,16 +106,30 @@
         margin: 0.9rem 0 0;
       }
 
-      .project {
-        margin-top: 3rem;
-        padding-top: 3rem;
-        border-top: 1px solid var(--line);
+      .project + .project {
+        margin-top: 5rem;
       }
 
-      .project:first-child {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: none;
+      .head {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0 0.75rem;
+        margin: 0 0 1.25rem;
+        padding: 0.85rem 0 0.75rem;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .num {
+        font-family:
+          ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.8125rem;
+        font-variant-numeric: tabular-nums;
+        color: var(--accent);
       }
 
       .banner {
@@ -143,7 +155,7 @@
       }
 
       .what {
-        margin: 0.1rem 0 0;
+        margin: 0;
         font-size: 0.875rem;
         line-height: 1.6;
         color: var(--ink-faint);
@@ -205,12 +217,10 @@
           padding-top: 3rem;
         }
         header {
-          margin-bottom: 2.25rem;
-          padding-bottom: 2.25rem;
+          margin-bottom: 1.75rem;
         }
-        .project {
-          margin-top: 2.25rem;
-          padding-top: 2.25rem;
+        .project + .project {
+          margin-top: 3.75rem;
         }
       }
     </style>
@@ -243,6 +253,11 @@
       </header>
       <main>
         <article class="project">
+          <div class="head">
+            <span class="num">01</span>
+            <h2>Alice 听写</h2>
+            <p class="what">英文单词听写 App</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -308,8 +323,6 @@
               <circle cx="1024" cy="204" r="6" fill="var(--art-ink)" />
             </svg>
           </div>
-          <h2>Alice 听写</h2>
-          <p class="what">英文单词听写 App</p>
           <p class="desc">
             拍照或粘贴生成词表，自动朗读，可调语速与间隔，随时重听当前词。标错的词进错词本，可查看、导出、直接开听。内置中考
             1600、高考 3500
@@ -327,6 +340,11 @@
         </article>
 
         <article class="project">
+          <div class="head">
+            <span class="num">02</span>
+            <h2>汤姆猫跑酷</h2>
+            <p class="what">原生 Android 3D 像素跑酷</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -391,8 +409,6 @@
               </g>
             </svg>
           </div>
-          <h2>汤姆猫跑酷</h2>
-          <p class="what">原生 Android 3D 像素跑酷</p>
           <p class="desc">
             三条跑道，左右换道、跳跃、铲滑。穿过传送门进入六个世界，配色、景物与重力各不相同。路上会刷出
             88
@@ -406,6 +422,11 @@
         </article>
 
         <article class="project">
+          <div class="head">
+            <span class="num">03</span>
+            <h2>一道+</h2>
+            <p class="what">小学奥数讲解工具</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -462,8 +483,6 @@
               <use href="#xt" transform="translate(450 50)" />
             </svg>
           </div>
-          <h2>一道+</h2>
-          <p class="what">小学奥数讲解工具</p>
           <p class="desc">
             面向 3–6
             年级。每道题给分步图文讲解、多解法对照与结构化可视化场景，并与方法手册互链。不做题库堆砌。
@@ -476,6 +495,11 @@
         </article>
 
         <article class="project">
+          <div class="head">
+            <span class="num">04</span>
+            <h2>Shopping Assistant</h2>
+            <p class="what">Discord 识图找货 Bot</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -558,8 +582,6 @@
               </g>
             </svg>
           </div>
-          <h2>Shopping Assistant</h2>
-          <p class="what">Discord 识图找货 Bot</p>
           <p class="desc">
             给购物社群用。管理员指定几个频道作为找货窗口，成员在里面发一张商品图，Bot
             以图搜同款、上架到店铺，几秒后在原频道回一条带购买链接的消息。只看指定频道里的图片附件，不读消息正文。
@@ -571,6 +593,11 @@
         </article>
 
         <article class="project">
+          <div class="head">
+            <span class="num">05</span>
+            <h2>Janja 蒹葭</h2>
+            <p class="what">编译为 JavaScript 的模板引擎</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -663,8 +690,6 @@
               />
             </svg>
           </div>
-          <h2>Janja 蒹葭</h2>
-          <p class="what">编译为 JavaScript 的模板引擎</p>
           <p class="desc">
             给 Node.js
             和浏览器用。语言小而完整：输出、条件、循环、宏、布局和过滤器，规范里每条规则都有一致性测试对应。输出默认做
@@ -679,6 +704,11 @@
         </article>
 
         <!-- <article class="project">
+          <div class="head">
+            <span class="num">06</span>
+            <h2>Rewindom</h2>
+            <p class="what">给编码 Agent 用的多租户 SaaS 底座</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -729,8 +759,6 @@
               </g>
             </svg>
           </div>
-          <h2>Rewindom</h2>
-          <p class="what">给编码 Agent 用的多租户 SaaS 底座</p>
           <p class="desc">
             内核不含业务代码，业务以 TypeScript
             模块挂载，按租户开关——未开通不挂路由、不进侧栏、不产生数据。内置认证与
@@ -748,6 +776,11 @@
         </article> -->
 
         <!-- <article class="project">
+          <div class="head">
+            <span class="num">07</span>
+            <h2>Yestino</h2>
+            <p class="what">多源事件雷达</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -827,8 +860,6 @@
               <circle cx="840" cy="200" r="12" fill="var(--art-accent)" />
             </svg>
           </div>
-          <h2>Yestino</h2>
-          <p class="what">多源事件雷达</p>
           <p class="desc">
             持续抓取公开信源，把多家媒体对同一件事的报道聚合成一个事件、按发生顺序重建时间线，每条说法都保留原文链接可逐条核对；有后续就在原事件上就地更新，而不是再发一条。首页分「正在升温」与「正在发生」，排序就是观点：什么在起变化、什么在进行中。整站不写业务代码——在
             Rewindom 上开通事件雷达与通讯模块、配好采集源即上线，支持邮件与
@@ -845,6 +876,11 @@
         </article> -->
 
         <!-- <article class="project">
+          <div class="head">
+            <span class="num">08</span>
+            <h2>Vanilla WoW 私服</h2>
+            <p class="what">macOS Apple Silicon 上的 1.12.1</p>
+          </div>
           <div class="banner">
             <svg
               viewBox="0 0 1200 400"
@@ -886,8 +922,6 @@
               />
             </svg>
           </div>
-          <h2>Vanilla WoW 私服</h2>
-          <p class="what">macOS Apple Silicon 上的 1.12.1</p>
           <p class="desc">
             原版 Blizzard 客户端跑在 WoWSilicon 的 Wine 上，服务端是 Docker 里的
             VMaNGOS，另配一个 SwiftUI 启动器。README
